@@ -149,16 +149,6 @@ figcaption{font-size:13.5px;color:var(--faint);margin-top:8px}
   <rect class="n" x="104" y="310" width="16" height="12" rx="2"/>
   <text x="126" y="321" class="lb">코드</text>
 </svg>
-<figcaption>요청 처리 흐름: 크롤링, 전처리, OpenAI 요약, REST API</figcaption></figure><figure><pre class="term">def summarize_text(text):
-    response = client.chat.completions.create(
-        model="gpt-3.5-turbo",
-        messages=[{
-            "role": "user",
-            "content": "Summarize the following text in Korean, "
-                       f"maximum 2 sentences: {text}",
-        }],
-        max_tokens=300,
-    )
-    return response.choices[0].message.content.strip()</pre><figcaption>요약 함수 (openai_client.py, 줄바꿈만 정리)</figcaption></figure><figure><img src="../img/snap_api.jpg" alt="카테고리별 뉴스 API 응답 화면 (Django REST Framework, 개발 중 캡처)"><figcaption>카테고리별 뉴스 API 응답 화면 (Django REST Framework, 개발 중 캡처)</figcaption></figure><figure><img src="../img/snap_flow.png" alt="서비스 구성도"><figcaption>서비스 구성도</figcaption></figure></section><p class="ai"><b>AI 활용</b>생성형 AI로 코드 작성과 오류 수정</p><nav class="pn"><a class="home" href="../index.html#projects"><small>처음으로</small><span>메인 화면</span></a><a class="next" href="thesis.html"><small>다음 프로젝트</small><span>페어 트레이딩 전략 연구</span></a></nav>
+<figcaption>요청 처리 흐름: 크롤링, 전처리, OpenAI 요약, REST API</figcaption></figure><figure><img src="../img/snap_api.jpg" alt="카테고리별 뉴스 API 응답 화면 (Django REST Framework, 개발 중 캡처)"><figcaption>카테고리별 뉴스 API 응답 화면 (Django REST Framework, 개발 중 캡처)</figcaption></figure><figure><img src="../img/snap_flow.png" alt="서비스 구성도"><figcaption>서비스 구성도</figcaption></figure></section><p class="ai"><b>AI 활용</b>생성형 AI로 코드 작성과 오류 수정</p><nav class="pn"><a class="home" href="../index.html#projects"><small>처음으로</small><span>메인 화면</span></a><a class="next" href="ttaja.html"><small>다음 프로젝트</small><span>광역버스 정류장 추천 서비스 또타자</span></a></nav>
 <footer>정영균, slowstar916@naver.com</footer>
 </main></body></html>
