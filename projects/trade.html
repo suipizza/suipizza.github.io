@@ -26,7 +26,7 @@ footer{margin-top:72px;color:var(--faint);font-size:13px}
 main{max-width:820px;margin:0 auto;padding:40px 28px 96px}
 .top{display:flex;justify-content:space-between;align-items:center;font-size:14.5px;padding-bottom:14px;border-bottom:1px solid var(--rule);margin-bottom:56px}
 .top .who{color:var(--ink);font-weight:600;text-decoration:none}
-.kind{font-size:14px;color:var(--green);font-weight:500;margin:0 0 6px}
+.kind{font-size:15px;color:var(--green);font-weight:600;margin:0 0 6px}
 h1{font-size:36px;font-weight:600;letter-spacing:-.02em;line-height:1.3;margin:0 0 12px}
 .lead{font-size:19px;line-height:1.65;color:var(--ink);margin:0 0 32px}
 .head{width:100%;border-collapse:collapse;border-top:2px solid var(--ink);font-size:15px;margin-bottom:32px}
@@ -44,7 +44,7 @@ section.part h2{margin-top:0}
 .part li::marker{color:var(--faint)}
 figure{margin:28px 0 0}
 figure img{display:block;width:100%;border:1px solid var(--rule);border-radius:3px;background:#fff}
-figure.narrow img{width:auto;max-width:100%;max-height:560px}
+figure.narrow img{width:auto;max-width:100%;max-height:520px}
 figcaption{font-size:13.5px;color:var(--faint);margin-top:8px}
 .dt{width:100%;border-collapse:collapse;font-size:14.5px;background:#fff;border-top:2px solid var(--ink)}
 .dt th{text-align:left;font-weight:500;color:var(--sub);padding:9px 12px;border-bottom:1px solid var(--rule)}
@@ -67,8 +67,8 @@ figcaption{font-size:13.5px;color:var(--faint);margin-top:8px}
 <div class="top"><a class="who" href="../index.html">정영균 포트폴리오</a><a href="../index.html#projects">전체 프로젝트</a></div>
 <p class="kind">네트워크 분석, 석사 그룹</p>
 <h1>글로벌 무역 네트워크 분석</h1>
-<p class="lead">UN 무역 데이터로 반도체·커피 무역을 네트워크로 비교. 같은 기준에서 연결 85개 vs 451개</p>
-<table class="head"><tr><th>기간</th><td>2026</td></tr><tr><th>형태</th><td>4인 그룹, 주제 제안, 데이터 정리, 분석 설계</td></tr><tr><th>기술</th><td>NetworkX, pandas, GeoPandas</td></tr><tr><th>코드</th><td><a href="https://github.com/suipizza/Global-Trade-Network-Analysis" target="_blank" rel="noopener">github.com/suipizza/Global-Trade-Network-Analysis</a></td></tr></table>
-<section class="part"><h2>데이터 정제</h2><ul><li>같은 거래가 수출국·수입국 양쪽에 기록되는 이중 집계를 수출 흐름 기준으로 정리</li><li>누적 교역액 90% 기준으로 연결을 걸러 구조가 보이게 정리</li></ul></section><section class="part"><h2>분석</h2><ul><li>연결·매개·고유벡터 중심성으로 허브 국가 비교, 무작위 네트워크와 비교</li><li>중심 국가 표적 제거 vs 무작위 제거로 회복력 시뮬레이션</li></ul></section><section class="part"><h2>화면과 구성</h2><figure><img src="../img/trade_semi.png" alt="반도체 무역 네트워크"><figcaption>반도체 무역 네트워크</figcaption></figure><figure><img src="../img/trade_res.png" alt="표적 제거 vs 무작위 제거"><figcaption>표적 제거 vs 무작위 제거</figcaption></figure></section><nav class="pn"><a class="home" href="../index.html#projects"><small>처음으로</small><span>메인 화면</span></a><span></span></nav>
+<p class="lead">UN 무역 데이터로 반도체와 커피 무역을 네트워크로 비교. 같은 기준에서 연결 85개 vs 451개</p>
+<table class="head"><tr><th>기간</th><td>2026</td></tr><tr><th>형태</th><td>4인 그룹, 주제 제안과 데이터 정리, 분석 설계</td></tr><tr><th>기술</th><td>NetworkX, pandas, GeoPandas</td></tr><tr><th>코드</th><td><a href="https://github.com/suipizza/Global-Trade-Network-Analysis" target="_blank" rel="noopener">github.com/suipizza/Global-Trade-Network-Analysis</a></td></tr></table>
+<section class="part"><h2>데이터 정제</h2><ul><li>같은 거래가 수출국과 수입국 양쪽에 기록되는 이중 집계를 수출 흐름 기준으로 정리</li><li>누적 교역액 90% 기준으로 연결을 걸러 구조가 보이게 정리</li></ul></section><section class="part"><h2>분석</h2><ul><li>연결, 매개, 고유벡터 중심성으로 허브 국가 비교, 무작위 네트워크와 비교</li><li>중심 국가 표적 제거와 무작위 제거로 회복력 시뮬레이션</li></ul></section><section class="part"><h2>화면과 구성</h2><figure><img src="../img/trade_semi.png" alt="반도체 무역 네트워크"><figcaption>반도체 무역 네트워크</figcaption></figure><figure><img src="../img/trade_res.png" alt="표적 제거와 무작위 제거 비교"><figcaption>표적 제거와 무작위 제거 비교</figcaption></figure></section><nav class="pn"><a class="home" href="../index.html#projects"><small>처음으로</small><span>메인 화면</span></a><span></span></nav>
 <footer>정영균, slowstar916@naver.com</footer>
 </main></body></html>
