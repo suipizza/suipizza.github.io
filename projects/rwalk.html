@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Random Walk 예측 벤치마크 | 정영균</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fbfbf9;--ink:#202124;--sub:#5f6368;--faint:#9aa0a6;--rule:#e4e4e0;--green:#1d6b4f;--green-bg:#eef5f1}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans KR",system-ui,sans-serif;font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;word-break:keep-all}
+a{color:var(--green);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:2px}
+h2{font-size:15px;font-weight:600;color:var(--green);margin:72px 0 6px;padding-bottom:10px;border-bottom:2px solid var(--green)}
+.when{color:var(--faint);font-size:14px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.line{display:grid;grid-template-columns:132px 1fr;gap:20px;padding:12px 0;border-bottom:1px solid var(--rule);font-size:15.5px}
+.line b{font-weight:600}
+.line .sub{display:block;color:var(--sub);font-size:14px}
+.term{margin:0;background:#202124;color:#e8eaed;font:12.5px/1.65 "IBM Plex Mono",ui-monospace,monospace;padding:14px 16px;border-radius:3px;white-space:pre-wrap;word-break:break-all}
+.term .c{color:#8fd1b3}.term .r{color:#f6aea9}
+footer{margin-top:72px;color:var(--faint);font-size:13px}
+@media (max-width:640px){.line{grid-template-columns:1fr;gap:2px}}
+
+main{max-width:820px;margin:0 auto;padding:40px 28px 96px}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:14.5px;padding-bottom:14px;border-bottom:1px solid var(--rule);margin-bottom:56px}
+.top .who{color:var(--ink);font-weight:600;text-decoration:none}
+.kind{font-size:15px;color:var(--green);font-weight:600;margin:0 0 6px}
+h1{font-size:36px;font-weight:600;letter-spacing:-.02em;line-height:1.3;margin:0 0 12px}
+.lead{font-size:19px;line-height:1.65;color:var(--ink);margin:0 0 32px}
+.head{width:100%;border-collapse:collapse;border-top:2px solid var(--ink);font-size:15px;margin-bottom:32px}
+.head th{text-align:left;font-weight:500;color:var(--faint);width:96px;padding:10px 16px 10px 0;vertical-align:top;border-bottom:1px solid var(--rule);white-space:nowrap}
+.head td{padding:10px 0;border-bottom:1px solid var(--rule)}
+.mets{display:flex;gap:0;margin:0 0 8px;background:var(--green-bg);border-radius:3px}
+.mets div{flex:1;padding:16px 20px;border-left:1px solid #fff}
+.mets div:first-child{border-left:0}
+.mets b{display:block;font-size:24px;font-weight:600;color:var(--green);font-variant-numeric:tabular-nums}
+.mets span{font-size:13.5px;color:var(--sub)}
+section.part{margin-top:44px}
+section.part h2{margin-top:0}
+.part ul{margin:12px 0 0;padding-left:1.1em}
+.part li{margin:6px 0;color:#3c4043}
+.part li::marker{color:var(--faint)}
+figure{margin:28px 0 0}
+figure img{display:block;width:100%;border:1px solid var(--rule);border-radius:3px;background:#fff}
+figure.narrow img{width:auto;max-width:100%;max-height:520px}
+figcaption{font-size:13.5px;color:var(--faint);margin-top:8px}
+.dt{width:100%;border-collapse:collapse;font-size:14.5px;background:#fff;border-top:2px solid var(--ink)}
+.dt th{text-align:left;font-weight:500;color:var(--sub);padding:9px 12px;border-bottom:1px solid var(--rule)}
+.dt td{padding:9px 12px;border-bottom:1px solid var(--rule);font-variant-numeric:tabular-nums}
+.dt .r{text-align:right;white-space:nowrap}
+.dt tr.hl td{background:var(--green-bg);font-weight:600;color:var(--green)}
+.svgfig svg{display:block;width:100%;height:auto;background:#fff;border:1px solid var(--rule);border-radius:3px;padding:14px 10px}
+.svgfig{display:block}
+.ai{font-size:15px;color:var(--sub);margin:44px 0 0;padding:14px 18px;background:#f1f1ee;border-radius:3px}
+.ai b{color:var(--ink);font-weight:600;margin-right:6px}
+.pn{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:72px;padding-top:18px;border-top:2px solid var(--ink)}
+.pn a{text-decoration:none;color:inherit;display:block}
+.pn small{display:block;color:var(--faint);font-size:13px}
+.pn span{font-size:16px;font-weight:600}
+.pn a:hover span{color:var(--green)}
+.pn .next{text-align:right}
+@media (max-width:640px){main{padding:28px 20px 72px}h1{font-size:28px}.lead{font-size:17px}.mets{flex-direction:column}.mets div{border-left:0;border-top:1px solid #fff}}
+</style></head>
+<body><main>
+<div class="top"><a class="who" href="../index.html">정영균 포트폴리오</a><a href="../index.html#projects">전체 프로젝트</a></div>
+<p class="kind">시계열 시뮬레이션, 석사 과정 팀</p>
+<h1>Random Walk 예측 벤치마크</h1>
+<p class="lead">AR, MA, ARMA 모형이 랜덤워크보다 예측을 잘하는지, 자기상관 강도와 추정 창 방식별로 Monte Carlo 시뮬레이션으로 비교</p>
+<table class="head"><tr><th>기간</th><td>2026</td></tr><tr><th>형태</th><td>University of Glasgow 석사 과정 그룹 과제 (Applied Time Series 과목)</td></tr><tr><th>기술</th><td>Python, statsmodels, NumPy, pandas</td></tr><tr><th>코드</th><td><a href="https://github.com/suipizza/Random-walk-forecasting-benchmark" target="_blank" rel="noopener">github.com/suipizza/Random-walk-forecasting-benchmark</a></td></tr></table>
+<section class="part"><h2>분석 질문</h2><ul><li>예측에서 이기기 어려운 기준으로 알려진 랜덤워크를 고전적 시계열 모형이 얼마나 이기는지, 자기상관이 강해질수록 어떻게 달라지는지 확인</li></ul></section><section class="part"><h2>방법</h2><ul><li>AR(1), AR(5), MA(1), MA(5), ARMA(2,2)를 약한·강한 계수로 나눠 시뮬레이션 데이터 생성 (각 500개 관측, 총 100개 데이터셋)</li><li>실제 데이터처럼 정답 모형을 모른다고 보고 ACF·PACF와 BIC로 모형 선택</li><li>고정·롤링·누적(recursive) 추정 창 세 가지로 예측하고 RMSE·MAE로 랜덤워크와 비교</li></ul><figure class="sec"><img src="../img/rw_acf.png" alt="AR(1) 시뮬레이션 데이터의 ACF·PACF: 계수가 클수록 ACF가 천천히 줄어듦"><figcaption>AR(1) 시뮬레이션 데이터의 ACF·PACF: 계수가 클수록 ACF가 천천히 줄어듦</figcaption></figure></section><section class="part"><h2>결과</h2><ul><li>차수가 높고 계수가 약한 모형은 표본에서 단순한 모형처럼 보여, BIC가 더 간단한 모형을 고르는 경우가 많음</li><li>대부분의 경우 선택한 모형이 랜덤워크보다 오차가 작았지만, 자기상관이 강할수록 차이가 줄어듦</li><li>세 가지 추정 창 중 누적 방식이 가장 안정적으로 낮은 오차를 냄</li></ul><figure class="sec"><img src="../img/rw_rolling.png" alt="롤링 창에서 선택 모형과 랜덤워크의 평균 RMSE 비교"><figcaption>롤링 창에서 선택 모형과 랜덤워크의 평균 RMSE 비교</figcaption></figure></section><section class="part"><h2>추가 결과</h2><figure><img src="../img/rw_method.png" alt="추정 창 방식(고정·롤링·누적)별 RMSE 비교"><figcaption>추정 창 방식(고정·롤링·누적)별 RMSE 비교</figcaption></figure></section><nav class="pn"><a class="home" href="../index.html#projects"><small>처음으로</small><span>메인 화면</span></a><a class="next" href="network.html"><small>다음 프로젝트</small><span>무역·산업 네트워크 분석</span></a></nav>
+<footer>정영균, slowstar916@naver.com</footer>
+</main></body></html>

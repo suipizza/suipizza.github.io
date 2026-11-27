@@ -51,7 +51,7 @@ h3.grp{font-size:17px;font-weight:600;color:var(--ink);margin:32px 0 16px}
 .card:hover{border-top-color:var(--green)}
 .card:hover .name{color:var(--green);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
 .wrap760{max-width:760px}
-h3.grp.sm{font-size:15.5px;margin:48px 0 4px}
+h3.grp .gsub{font-weight:400;color:var(--faint);font-size:14px;margin-left:8px}
 h3.grp.sm span{font-weight:400;color:var(--faint);font-size:14px;margin-left:8px}
 .course{border-top:2px solid var(--ink)}
 .crow{display:grid;grid-template-columns:240px 1fr;gap:20px;padding:12px 0;border-bottom:1px solid var(--rule);font-size:15px}
@@ -209,8 +209,28 @@ h3.grp.sm span{font-weight:400;color:var(--faint);font-size:14px;margin-left:8px
   <p class="name">딥러닝 주가 예측 서비스 FinSight</p>
   <p class="one">LSTM, GRU, Transformer, XGBoost를 같은 조건에서 학습하고 튜닝해 RMSE로 비교</p>
 </a></div>
-<h3 class="grp sm">석사 과정 분석 과제 <span>University of Glasgow</span></h3>
-<div class="course"><div class="crow"><a class="ct" href="projects/capm.html">CAPM 실증 검정</a><span class="cd">미국 주식 36년치(약 38만 건)로 베타와 수익률 관계 검정<span class="cm">Fama–MacBeth, GRS 검정, 롤링 베타 · <a href="projects/capm.html">상세 페이지</a></span></span></div><div class="crow"><a class="ct" href="https://github.com/suipizza/Bayesian-market-regime-detection" target="_blank" rel="noopener">베이지안 시장 국면 탐지</a><span class="cd">S&P500 일별 수익률을 유한 혼합 모형으로 침체·안정·성장 국면에 분류<span class="cm">Gibbs Sampling 직접 구현, MCMC · <a href="https://github.com/suipizza/Bayesian-market-regime-detection" target="_blank" rel="noopener">GitHub</a></span></span></div><div class="crow"><a class="ct" href="https://github.com/suipizza/Random-walk-forecasting-benchmark" target="_blank" rel="noopener">Random Walk 예측 벤치마크</a><span class="cd">AR, MA, ARMA 모형과 랜덤워크의 예측 성능을 자기상관 강도별로 시뮬레이션 비교 (그룹 과제)<span class="cm">Monte Carlo, ACF/PACF·BIC, RMSE·MAE · <a href="https://github.com/suipizza/Random-walk-forecasting-benchmark" target="_blank" rel="noopener">GitHub</a></span></span></div><div class="crow"><a class="ct" href="https://github.com/suipizza/Global-Trade-Network-Analysis" target="_blank" rel="noopener">무역·산업 네트워크 분석</a><span class="cd">반도체·커피 무역 네트워크와 영국 산업연관표로 중심 국가·산업과 충격 확산 분석<span class="cm">중심성, 회복력 시뮬레이션 · <a href="https://github.com/suipizza/Global-Trade-Network-Analysis" target="_blank" rel="noopener">GitHub</a> · <a href="https://github.com/suipizza/UK-Production-Network-Analysis" target="_blank" rel="noopener">영국 산업연관표 GitHub</a></span></span></div></div>
+<h3 class="grp" style="margin-top:56px">통계·계량 분석 <span class="gsub">University of Glasgow 석사 과정</span></h3>
+<div class="grid"><a class="card" href="projects/capm.html">
+  <span class="thumb"><img src="img/capm_sml.png" alt="" loading="lazy"></span>
+  <span class="meta"><span class="tg">실증 분석, 석사 과정</span><span>2026</span></span>
+  <p class="name">CAPM 실증 검정</p>
+  <p class="one">미국 주식 1980–2015 월별 수익률 약 38만 건으로, 시장 베타가 실제 수익률 차이를 설명하는지 검정</p>
+</a><a class="card" href="projects/bayes.html">
+  <span class="thumb"><img src="img/bay_recession.png" alt="" loading="lazy"></span>
+  <span class="meta"><span class="tg">베이지안 모델링, 석사 과정</span><span>2026</span></span>
+  <p class="name">베이지안 시장 국면 탐지</p>
+  <p class="one">S&P500 일별 수익률을 유한 혼합 모형으로 침체·안정·성장 국면에 나누고, Gibbs Sampler를 직접 구현해 추정</p>
+</a><a class="card" href="projects/rwalk.html">
+  <span class="thumb"><img src="img/rw_rolling.png" alt="" loading="lazy"></span>
+  <span class="meta"><span class="tg">시계열 시뮬레이션, 석사 과정 팀</span><span>2026</span></span>
+  <p class="name">Random Walk 예측 벤치마크</p>
+  <p class="one">AR, MA, ARMA 모형이 랜덤워크보다 예측을 잘하는지, 자기상관 강도와 추정 창 방식별로 Monte Carlo 시뮬레이션으로 비교</p>
+</a><a class="card" href="projects/network.html">
+  <span class="thumb"><img src="img/net_semi.png" alt="" loading="lazy"></span>
+  <span class="meta"><span class="tg">네트워크 분석, 석사 과정</span><span>2026</span></span>
+  <p class="name">무역·산업 네트워크 분석</p>
+  <p class="one">반도체·커피 무역 네트워크와 영국 산업연관표를 그래프로 만들어 중심 국가·산업과 충격이 퍼지는 구조를 분석</p>
+</a></div>
 
 <div class="wrap760">
 <h2 id="career">경력/교육</h2>

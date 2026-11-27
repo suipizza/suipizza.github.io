@@ -65,10 +65,10 @@ figcaption{font-size:13.5px;color:var(--faint);margin-top:8px}
 </style></head>
 <body><main>
 <div class="top"><a class="who" href="../index.html">정영균 포트폴리오</a><a href="../index.html#projects">전체 프로젝트</a></div>
-<p class="kind">실증 분석, 석사 과제</p>
+<p class="kind">실증 분석, 석사 과정</p>
 <h1>CAPM 실증 검정</h1>
 <p class="lead">미국 주식 1980–2015 월별 수익률 약 38만 건으로, 시장 베타가 실제 수익률 차이를 설명하는지 검정</p>
-<table class="head"><tr><th>기간</th><td>2026</td></tr><tr><th>형태</th><td>University of Glasgow 석사 과제 (Asset Pricing)</td></tr><tr><th>기술</th><td>Python, pandas, NumPy, statsmodels, SciPy</td></tr><tr><th>코드</th><td><a href="https://github.com/suipizza/Empirical-CAPM-Tests" target="_blank" rel="noopener">github.com/suipizza/Empirical-CAPM-Tests</a></td></tr></table>
+<table class="head"><tr><th>기간</th><td>2026</td></tr><tr><th>형태</th><td>University of Glasgow 석사 과정 (Asset Pricing 과목)</td></tr><tr><th>기술</th><td>Python, pandas, NumPy, statsmodels, SciPy</td></tr><tr><th>코드</th><td><a href="https://github.com/suipizza/Empirical-CAPM-Tests" target="_blank" rel="noopener">github.com/suipizza/Empirical-CAPM-Tests</a></td></tr></table>
 <section class="part"><h2>분석 질문</h2><ul><li>베타가 높은 주식일수록 실제로 더 높은 수익률을 냈는지, CAPM이 미국 주식 수익률을 설명하는지 확인</li></ul></section><section class="part"><h2>방법</h2><ul><li>초과수익률을 계산하고 종목별 36개월 롤링 베타 추정</li><li>매월 베타 기준 10분위 포트폴리오를 구성해 동일가중 수익률 계산</li><li>포트폴리오별 시계열 회귀(Newey–West t값)와 GRS 검정으로 알파가 0인지 검정</li><li>Fama–MacBeth 2단계 회귀로 베타와 수익률의 횡단면 관계 추정</li><li>1983–1999, 2000–2015로 나눠 결과가 기간에 따라 유지되는지 확인</li></ul><figure class="sec"><table class="dt"><thead><tr><th>베타 분위</th><th class="r">알파(월, %)</th><th class="r">t(알파)</th><th class="r">베타</th><th class="r">R²</th></tr></thead><tbody>
 <tr><td>1 (최저)</td><td class="r">0.10</td><td class="r">0.68</td><td class="r">0.00</td><td class="r">0.00</td></tr>
 <tr><td>3</td><td class="r">-0.12</td><td class="r">-0.87</td><td class="r">0.50</td><td class="r">0.40</td></tr>
@@ -76,6 +76,6 @@ figcaption{font-size:13.5px;color:var(--faint);margin-top:8px}
 <tr><td>7</td><td class="r">-0.28</td><td class="r">-2.10</td><td class="r">1.04</td><td class="r">0.71</td></tr>
 <tr><td>10 (최고)</td><td class="r">-0.68</td><td class="r">-4.65</td><td class="r">1.72</td><td class="r">0.84</td></tr>
 <tr class="hl"><td>GRS 검정</td><td class="r" colspan="4">4.80 (p &lt; 0.001), 알파가 모두 0이라는 가설 기각</td></tr>
-</tbody></table><figcaption>베타 분위 포트폴리오의 시계열 회귀 결과 (일부 분위)</figcaption></figure></section><section class="part"><h2>결과</h2><ul><li>베타가 높은 포트폴리오일수록 알파가 낮음 (1분위 0.10% → 10분위 -0.68%, 월)</li><li>Fama–MacBeth 기울기 0.18 (t = 1.00)로 유의하지 않아, 실제 증권시장선이 이론보다 평평함</li><li>두 기간 모두 저베타 이상현상이 나타났고, 2000년 이후 기울기는 0.02로 더 평평해짐</li></ul><figure class="sec"><img src="../img/capm_sml.png" alt="실증 증권시장선(파란 점선)이 이론상 증권시장선(초록)보다 평평함: 베타 10분위 포트폴리오의 베타와 평균 초과수익률"><figcaption>실증 증권시장선(파란 점선)이 이론상 증권시장선(초록)보다 평평함: 베타 10분위 포트폴리오의 베타와 평균 초과수익률</figcaption></figure></section><section class="part"><h2>배운 점</h2><ul><li>이론 모형도 데이터로 검정해야 하고, 기간을 나눠 결과가 유지되는지까지 확인해야 결론을 말할 수 있음</li></ul></section><nav class="pn"><a class="home" href="../index.html#projects"><small>처음으로</small><span>메인 화면</span></a><span></span></nav>
+</tbody></table><figcaption>베타 분위 포트폴리오의 시계열 회귀 결과 (일부 분위)</figcaption></figure></section><section class="part"><h2>결과</h2><ul><li>베타가 높은 포트폴리오일수록 알파가 낮음 (1분위 0.10% → 10분위 -0.68%, 월)</li><li>Fama–MacBeth 기울기 0.18 (t = 1.00)로 유의하지 않아, 실제 증권시장선이 이론보다 평평함</li><li>두 기간 모두 저베타 이상현상이 나타났고, 2000년 이후 기울기는 0.02로 더 평평해짐</li></ul><figure class="sec"><img src="../img/capm_sml.png" alt="실증 증권시장선(파란 점선)이 이론상 증권시장선(초록)보다 평평함: 베타 10분위 포트폴리오의 베타와 평균 초과수익률"><figcaption>실증 증권시장선(파란 점선)이 이론상 증권시장선(초록)보다 평평함: 베타 10분위 포트폴리오의 베타와 평균 초과수익률</figcaption></figure></section><section class="part"><h2>배운 점</h2><ul><li>이론 모형도 데이터로 검정해야 하고, 기간을 나눠 결과가 유지되는지까지 확인해야 결론을 말할 수 있음</li></ul></section><nav class="pn"><a class="home" href="../index.html#projects"><small>처음으로</small><span>메인 화면</span></a><a class="next" href="bayes.html"><small>다음 프로젝트</small><span>베이지안 시장 국면 탐지</span></a></nav>
 <footer>정영균, slowstar916@naver.com</footer>
 </main></body></html>
